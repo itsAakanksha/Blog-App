@@ -33,17 +33,17 @@ export default function Post() {
   };
 
   return post ? (
-    <div className="py-8 bg-gray-100">
+    <div className="py-16 bg-gray-100">
       <Container>
-        <div className="w-full flex justify-center mb-4 relative border rounded-xl overflow-hidden">
+        <div className="w-full flex flex-col items-center mb-8">
           <img
             src={services.getFilePreview(post.featuredimage)}
             alt={post.title}
-            className="rounded-xl object-cover w-full h-64 sm:h-96"
+            className="rounded-xl object-cover w-full h-80 md:h-96 lg:h-128 shadow-xl"
           />
 
           {isAuthor && (
-            <div className="absolute right-6 top-6 flex space-x-2">
+            <div className="mt-6 flex space-x-4">
               <Link to={`/edit-post/${post.$id}`}>
                 <Button bgColor="bg-green-500">Edit</Button>
               </Link>
@@ -53,10 +53,10 @@ export default function Post() {
             </div>
           )}
         </div>
-        <div className="w-full mb-6">
-          <h1 className="text-3xl font-bold text-gray-800">{post.title}</h1>
+        <div className="w-full mb-8 text-center">
+          <h1 className="text-4xl font-bold text-gray-800">{post.title}</h1>
         </div>
-        <div className="prose max-w-full browser-css">
+        <div className="prose max-w-full text-gray-700">
           {parse(post.content)}
         </div>
       </Container>

@@ -8,8 +8,6 @@ import { Outlet } from "react-router-dom";
 import conf from "./conf/conf";
 
 function App() {
-  // console.log(conf.appwriteUrl);
-
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
@@ -27,14 +25,14 @@ function App() {
   }, []);
 
   return !loading ? (
-    <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
-      <div className="w-full block">
-        <Header />
-        <main>
-        <Outlet />
+    <div className="min-h-screen flex flex-col bg-custom  text-black">
+      <Header />
+      <Container className="flex-1">
+        <main className="py-8">
+          <Outlet />
         </main>
-        <Footer />
-      </div>
+      </Container>
+      <Footer />
     </div>
   ) : null;
 }

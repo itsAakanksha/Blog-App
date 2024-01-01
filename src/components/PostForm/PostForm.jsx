@@ -49,7 +49,7 @@ export default function PostForm({ post }) {
         data.featuredimage = fileId;
         const dbPost = await services.createPosts({
           ...data,
-          userid: userData.$id,
+          userd: userData.$id,
         });
 
         if (dbPost) {
@@ -102,35 +102,37 @@ export default function PostForm({ post }) {
   }, [watch, slugTransform, setValue]);
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-      <div className="w-2/3 px-2">
+    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap bg-white p-6 shadow-md rounded-lg">
+      <div className="w-full md:w-2/3 md:pr-4">
         <Input
-          label="Title :"
-          placeholder="Title"
+          label="Title:"
+          placeholder="Enter the title"
           className="mb-4"
           {...register("title", { required: true })}
         />
         <Input
-          label="Slug :"
-          placeholder="Slug"
+          label="Slug:"
+          placeholder="Enter the slug"
           className="mb-4"
           {...register("slug", { required: true })}
           onInput={(e) => {
-            setValue("slug", slugTransform(e.currentTarget.value), {
-              shouldValidate: true,
-            });
+            setValue(
+              "slug",
+              slugTransform(e.currentTarget.value),
+              { shouldValidate: true }
+            );
           }}
         />
         <RTE
-          label="Content :"
+          label="Content:"
           name="content"
           control={control}
           defaultValue={getValues("content")}
         />
       </div>
-      <div className="w-1/3 px-2">
+      <div className="w-full md:w-1/3 mt-4 md:mt-0">
         <Input
-          label="Featured Image :"
+          label="Featured Image:"
           type="file"
           className="mb-4"
           accept="image/png, image/jpg, image/jpeg, image/gif"
@@ -141,7 +143,7 @@ export default function PostForm({ post }) {
             <img
               src={services.getFilePreview(post.featuredimage)}
               alt={post.title}
-              className="rounded-lg"
+              className="rounded-lg w-full"
             />
           </div>
         )}

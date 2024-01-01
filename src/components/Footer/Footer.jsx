@@ -9,7 +9,7 @@ function Footer() {
           {/* Add your logo component here */}
           {/* <Logo width="100px" /> */}
           <p className="mt-4 text-gray-300">
-            &copy; {new Date().getFullYear()} DevUI. All Rights Reserved.
+           
           </p>
         </div>
 
