@@ -5,39 +5,41 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {
-  // const authStatus = useSelector((state)=>state.auth.status);
-  const authStatus = true;
+  const authStatus = useSelector((state)=>state.auth.status);
+  // const authStatus = true
+  // console.log(authStatus)
   const navigate = useNavigate();
 
   const navItems = [
     {
       name: "Home",
       slug: "/",
-      active: authStatus,
+      active: true,
     },
     {
       name: "SignUp",
-      slug: "/signUp",
-      active: authStatus,
+      slug: "/signup",
+      active: !authStatus,
     },
+
     {
-      name: "login ",
+      name: "Login",
       slug: "/login",
-      active: authStatus,
+      active: !authStatus,
     },
     {
       name: " All Posts",
-      slug: "/all Posts",
+      slug: "/all-posts",
       active: authStatus,
     },
     {
       name: "add Post",
-      slug: "/addpost",
+      slug: "/add-post",
       active: authStatus,
     },
   ];
   return (
-    <header py-3 shadow bg-gray-500>
+    <header className=" py-3 shadow bg-gray-500">
     
       <nav className="flex">
         <ul className="flex ml-auto">
@@ -48,7 +50,7 @@ export default function Header() {
                   onClick={() => navigate(item.slug)}
                   className=" px-6 py-2 duration-200 hover:bg-blue-100 rounded-full"
                 >
-                  {item.name}{" "}
+                  {item.name}
                 </button>
               </li>
             ) : null
