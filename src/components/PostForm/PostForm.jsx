@@ -38,7 +38,7 @@ export default function PostForm({ post }) {
    
         // if file is present in storage then add this file id in featuredimage
       });
-      {    console.log(file.$id)}
+     
 
       if (dbPost) {
         navigate(`/post/${dbPost.$id}`);
