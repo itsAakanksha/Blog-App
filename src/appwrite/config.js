@@ -14,7 +14,7 @@ import conf from "../conf/conf.js";
     this.bucket = new Storage(this.client);
   }
 
-  async createPosts({ title, slug, content,featuredimage, status, userid }) {
+  async createPosts({ title, slug, content,featuredimage, status, userid}) {
     try {
       return await this.databases.createDocument(
         conf.appwriteDatabaseid,
@@ -106,6 +106,7 @@ import conf from "../conf/conf.js";
       );
     } catch (error) {
       console.log("Appwrite service :: uploadFile :: error ", error);
+      throw error;
     }
   }
 

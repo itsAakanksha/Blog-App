@@ -12,7 +12,8 @@ import Post from './pages/Post.jsx'
 import Home from './pages/Home.jsx'
 import Signin from './pages/Signin.jsx'
 import { AuthLayout } from './components/index.js'
-import AddPost from './pages/AddPost'
+// import AddPost from './pages/AddPost'
+import {PostForm} from './components/index.js'
 
 const route = createBrowserRouter(
   createRoutesFromElements(
@@ -21,7 +22,7 @@ const route = createBrowserRouter(
     <Route path='/login' element= {<AuthLayout authentication={false}><Signin/></AuthLayout>}/>
     <Route path='/signup' element = {<AuthLayout authentication={false}><Signup/></AuthLayout>}/>
     <Route path='/all-posts' element = {<AuthLayout authentication><Allposts/></AuthLayout>}/>
-    <Route path='/add-post' element = {<AuthLayout authentication><AddPost/></AuthLayout>}/>
+    <Route path='/add-post' element = {<AuthLayout authentication><PostForm/></AuthLayout>}/>
     <Route path='/edit-post/:slug' element = {<AuthLayout authentication><EditPost/></AuthLayout>}/>
     <Route path='/post/:slug' element ={<AuthLayout authentication><Post/></AuthLayout>}/>
    
