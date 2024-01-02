@@ -3,7 +3,7 @@ import Footer from "./Footer/Footer.jsx";
 import Container from "./Container/Container.jsx";
 import LogoutBtn from "./Header/LogoutBtn.jsx";
 import Button from "./Button.jsx";
-import Login from "./login.jsx";
+import Login from "./Login.jsx";
 import Signup from "./Signup.jsx";
 import PostForm from "./PostForm/PostForm.jsx";
 import PostCard from "./Postcard.jsx";
