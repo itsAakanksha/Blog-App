@@ -11,6 +11,7 @@ import Select from "./Selector.jsx";
 import Input from "./input.jsx";
 import RTE from "./RTE.jsx";
 import AuthLayout from "./AuthLayout.jsx";
+import Logo from "./Logo/Logo.jsx";
 
 export {
   Header,
@@ -26,4 +27,5 @@ export {
   Select,
   RTE,
   AuthLayout,
+  Logo
 };

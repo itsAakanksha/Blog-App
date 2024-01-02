@@ -20,7 +20,7 @@ export default function PostForm({ post }) {
     });
   const navigate = useNavigate();
   const userData = useSelector((state) => state.auth.userData);
-  console.log("userid", userData.$id);
+ 
 
   const submit = async (data) => {
     if (post) {
@@ -35,8 +35,10 @@ export default function PostForm({ post }) {
       const dbPost = await services.updatePosts(post.$id, {
         ...data,
         featuredimage: file ? file.$id : undefined,
+   
         // if file is present in storage then add this file id in featuredimage
       });
+      {    console.log(file.$id)}
 
       if (dbPost) {
         navigate(`/post/${dbPost.$id}`);
@@ -49,7 +51,7 @@ export default function PostForm({ post }) {
         data.featuredimage = fileId;
         const dbPost = await services.createPosts({
           ...data,
-          userd: userData.$id,
+          userid: userData.$id,
         });
 
         if (dbPost) {

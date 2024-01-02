@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {Logo} from '../index'
 
 function Footer() {
   return (
     <footer className="bg-gray-800 text-white py-12">
-      <div className="container mx-auto flex flex-wrap justify-between">
+      <div className="container mx-auto px-8 flex flex-row flex-wrap justify-between">
         <div className="w-full md:w-1/2 lg:w-1/4 mb-8 md:mb-0">
           {/* Add your logo component here */}
-          {/* <Logo width="100px" /> */}
+           <Logo width='100px' /> 
           <p className="mt-4 text-gray-300">
            
           </p>

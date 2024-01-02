@@ -6,6 +6,7 @@ import { Button, Input } from "./index";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import {Logo} from "./index";
 
 function Login() {
   const dispatch = useDispatch();
@@ -33,8 +34,8 @@ function Login() {
     >
         <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
         <div className="mb-2 flex justify-center">
-                    <span className="inline-block w-full max-w-[100px]">
-                       LOgo
+                    <span className="inline-block w-full max-w-[120px]">
+                      <Logo width = "50px"/>
                     </span>
         </div>
         <h2 className="text-center text-2xl font-bold leading-tight">Sign in to your account</h2>
