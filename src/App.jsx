@@ -25,14 +25,13 @@ function App() {
   }, []);
 
   return !loading ? (
-    <div className="min-h-screen flex flex-wrap content-between flex-col bg-custom  text-black">
-    <div className='w-full block'>
+    <div className="min-h-full flex flex-col bg-custom  text-black">
+   
       <Header />
         <main className="py-8">
           <Outlet />
         </main>
       <Footer />
-    </div>
     </div>
   ) : null;
 }
