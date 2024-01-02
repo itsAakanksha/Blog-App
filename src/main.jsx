@@ -10,7 +10,7 @@ import Allposts from './pages/Allposts.jsx'
 import EditPost from './pages/EditPost.jsx'
 import Post from './pages/Post.jsx'
 import Home from './pages/Home.jsx'
-import Signin from './pages/signin.jsx'
+import Signin from './pages/Signin.jsx'
 import { AuthLayout } from './components/index.js'
 import AddPost from './pages/AddPost'
 
