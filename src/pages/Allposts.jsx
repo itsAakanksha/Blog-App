@@ -19,12 +19,11 @@ export default function Allposts() {
    
    
   return (
-  <div className=' w-full py-8'>
-
+  <div className=' w-full py-8 '>
   <Container>
-  <div className='flex flex-wrap '>
+  <div className='flex flex-wrap justify-center'>
   {posts.map((post)=>
-    <div key={post.$id} className='p-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5'>
+    <div key={post.$id} className='p-2 w-full sm:w-1/2 md:w-1/3 lg:w-3/10 xl:w-1/5 '>
        <PostCard {...post}/>
     </div>
     )}
